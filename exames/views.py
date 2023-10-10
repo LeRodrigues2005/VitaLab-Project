@@ -80,10 +80,10 @@ def permitir_abrir_exame(request, exame_id):
 
     if not exame.requer_senha:
         if not exame.resultado:
-            messages.add_message(request, constants.ERROR, 'Seu reultado ainda não foi cadastrado. Entre em cntato como laboratório.')
+            messages.add_message(request, constants.ERROR, 'Seu reultado ainda não foi cadastrado. Entre em contato com o laboratório.')
             return redirect('/exames/solicitar_exames/')
         return redirect(exame.resultado.url)
-        	
+
     return redirect (f'/exames/solicitar_senha_exame/{exame_id}')
 
 @login_required
